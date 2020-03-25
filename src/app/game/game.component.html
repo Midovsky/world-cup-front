@@ -1,0 +1,22 @@
+
+<table  class="table table-striped" id="table">
+  <thead>
+      <tr>
+      <th>ID</th>
+      <th>stadium</th>
+      <th>score </th>
+      <th> price </th>
+      </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let game of games; let i = index">
+    <td>{{game.id}}</td>
+    <td>{{game.stadium}}</td>
+    <td>{{game.score}}</td>
+    <td>{{game.price}}</td>
+
+    <td> <button class="btn"  > Details </button></td>
+    <td> <button class="btn btn-danger" (click)="onDelete(i,game)">  Delete </button></td>
+  </tr>
+</tbody>
+</table>
