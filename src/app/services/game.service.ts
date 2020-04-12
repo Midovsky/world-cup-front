@@ -16,7 +16,7 @@ export class GameService {
    storeGame(game:Game) {
      const token= this.authService.getToken();
      const headers = new Headers({'Content-Type': 'application/json', 'Authorization': 'Bearer '+token});
-       return this.http.post('http://localhost:8000/api/games',
+       return this.http.post('http://localhost:8080/api/games',
        game,
        {headers: headers})
        .map(
@@ -35,7 +35,7 @@ export class GameService {
    updateGame(game:Game, id) {
      const token= this.authService.getToken();
      const headers = new Headers({'Content-Type': 'application/json', 'Authorization': 'Bearer '+token});
-     return this.http.put('http://localhost:8000/api/games/'+id,
+     return this.http.put('http://localhost:8080/api/games/'+id,
      game,
      {headers: headers})
        .map(

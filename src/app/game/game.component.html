@@ -1,22 +1,163 @@
-
-<table  class="table table-striped" id="table">
+<button (click)="onAdd()" class="btn btn-info" *ngIf="showGames">Add Game</button>
+<table  class="table table-striped" id="table" *ngIf="showGames">
   <thead>
       <tr>
       <th>ID</th>
+      <th>date</th>
       <th>stadium</th>
       <th>score </th>
       <th> price </th>
       </tr>
 </thead>
 <tbody>
-  <tr *ngFor="let game of games; let i = index">
+  <tr *ngFor="let game of games; let i = index" >
     <td>{{game.id}}</td>
+    <td>{{game.date}}</td>
     <td>{{game.stadium}}</td>
     <td>{{game.score}}</td>
     <td>{{game.price}}</td>
 
-    <td> <button class="btn"  > Details </button></td>
+    <td> <button class="btn" (click)="onEdit(i,game.id)"  > Edit </button></td>
     <td> <button class="btn btn-danger" (click)="onDelete(i,game)">  Delete </button></td>
   </tr>
 </tbody>
 </table>
+
+<br> <br>
+
+
+<div class="page-header" *ngIf="showFormAdd">
+  <h4>Add game</h4>
+</div>
+
+<form (ngSubmit)="onSubmit(f)" #f="ngForm"  class="form" *ngIf="showFormAdd">
+<div class="form-group">
+  <label for="stadium">Game stadium</label>
+  <input
+    type="text"
+    id="stadium"
+    class="form-control input-sm"
+    name="stadium"
+    [(ngModel)]="game.stadium"
+    required
+  >
+</div>
+
+
+<div class="form-group">
+  <label for="date">Date</label>
+  <input
+    type="text"
+    id="date"
+    class="form-control input-sm"
+    name="date"
+    [(ngModel)]="game.date"
+        >
+  </div>
+
+<div class="form-group">
+  <label for="score">Score</label>
+  <input
+    type="text"
+    id="score"
+    class="form-control input-sm"
+    name="score"
+    [(ngModel)]="game.score"
+        >
+  </div>
+
+  <div class="form-group">
+    <label for="homeTeam" >Home Team</label>
+      <select  type="text"  name="homeTeam" id="homeTeam" ngModel class="form-control input-sm" required >
+        <option *ngFor="let team of teams" [ngValue]="team">{{team.name}}</option>
+      </select>
+  </div>
+    
+  <div class="form-group">
+    <label for="awayTeam" >Away Team</label>
+      <select  type="text"  name="awayTeam" id="awayTeam" ngModel class="form-control input-sm" required >
+        <option *ngFor="let team of teams" [ngValue]="team">{{team.name}}</option>
+      </select>
+  </div>
+    
+
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input
+      type="text"
+      id="price"
+      class="form-control input-sm"
+      name="price"
+      [(ngModel)]="game.price"
+          >
+    </div>
+
+
+    <input type="hidden" name="index" [(ngModel)]="index">
+    <input type="hidden" name="id" [(ngModel)]="id">
+
+  <div class="form-group">
+    <button class="btn btn-primary margin-top-30 full-width-block" ><i class="fa fa-btn fa-floppy-o"></i>Add game</button>
+
+  </div>
+
+
+  
+</form>
+
+
+<div class="page-header" *ngIf="showFormUpdate">
+  <h4>Update game</h4>
+</div>
+
+<form (ngSubmit)="onUpdateSubmit(f)" #f="ngForm"  class="form" *ngIf="showFormUpdate">
+<div class="form-group">
+  <label for="stadium">Game stadium</label>
+  <input
+    type="text"
+    id="stadium"
+    class="form-control input-sm"
+    name="stadium"
+    [(ngModel)]="game.stadium"
+    required
+  >
+</div>
+
+
+
+<div class="form-group">
+  <label for="score">Score</label>
+  <input
+    type="text"
+    id="score"
+    class="form-control input-sm"
+    name="score"
+    [(ngModel)]="game.score"
+        >
+  </div>
+
+
+
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input
+      type="text"
+      id="price"
+      class="form-control input-sm"
+      name="price"
+      [(ngModel)]="game.price"
+          >
+    </div>
+
+
+    <input type="hidden" name="index" [(ngModel)]="index">
+    <input type="hidden" name="id" [(ngModel)]="id">
+
+  <div class="form-group">
+    <button class="btn btn-primary margin-top-30 full-width-block" ><i class="fa fa-btn fa-floppy-o"></i>Update game</button>
+
+  </div>
+
+
+  
+</form>

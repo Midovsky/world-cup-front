@@ -16,7 +16,7 @@ export class TeamService {
    storeTeam(team:Team) {
      const token= this.authService.getToken();
      const headers = new Headers({'Content-Type': 'application/json', 'Authorization': 'Bearer '+token});
-       return this.http.post('http://localhost:8000/api/teams',
+       return this.http.post('http://localhost:8080/api/teams',
        team,
        {headers: headers})
        .map(

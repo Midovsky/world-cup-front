@@ -1,20 +1,23 @@
+import { Team } from './team.model';
+
 export class Game {
     public id:number;
-    public away_team_id:number;
-    public home_team_id:number
+    public awayTeam:Team;
+    public homeTeam:Team
     public date: string;
     public score: string;
     public price: number;
     public stadium: string;
 
   
-    constructor(date: string,away_team_id: number, home_team_id: number, score: string, price: number, stadium: string) {
+    constructor(date: string,awayTeam: Team, homeTeam: Team, score: string, price: number, stadium: string) {
       this.date = date;
-      this.away_team_id = away_team_id;
-      this.home_team_id = home_team_id;
+      this.awayTeam = awayTeam;
+      this.homeTeam = homeTeam;
       this.score = score;
       this.price = price;
       this.stadium = stadium;
     }
+
   }
   
