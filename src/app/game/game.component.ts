@@ -5,6 +5,7 @@ import { GameService } from '../services/game.service';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import { Team } from '../models/team.model';
 import { TeamService } from '../services/team.service';
+import { ReserveService } from '../services/reserve.service';
 
 
 @Component({
@@ -29,7 +30,7 @@ export class GameComponent implements OnInit {
 
   success = '';
 
-  constructor(private gameService:GameService, private teamService:TeamService, private router:Router,private route:ActivatedRoute) { }
+  constructor(private gameService:GameService, private teamService:TeamService,private reserveService:ReserveService, private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.showFormUpdate = false;
@@ -128,7 +129,6 @@ export class GameComponent implements OnInit {
   
 
     const newGame = new Game("",null,null,value.score,value.price,value.stadium);
-    console.log(newGame);
 
     this.gameService.updateGame(newGame,this.id)
     .subscribe(
@@ -150,7 +150,20 @@ export class GameComponent implements OnInit {
   );
   }
 
-  onBook(index,id){
+  onBook(id){
+
+    this.reserveService.reserveGame(id)
+    .subscribe(
+      (response) => {
+
+      this.router.navigate(['/games']);
+      this.onGet();
+      console.log(response);
+    },
+    (error) => {
+      console.log(error);
+    },
+  );
     
   }
 }

@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth-guard.service';
 import { TeamComponent } from './team/team.component';
 import { TeamService } from './services/team.service';
+import { ReserveService } from './services/reserve.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { TeamService } from './services/team.service';
 
 
   ],
-  providers: [GameService,TeamService,AuthService,AuthGuard],
+  providers: [GameService,TeamService,ReserveService,AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
