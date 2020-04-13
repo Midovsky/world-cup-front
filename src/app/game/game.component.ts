@@ -26,7 +26,6 @@ export class GameComponent implements OnInit {
   gameUpdated:Boolean;
   teams:Team[];
 
-  
 
   success = '';
 
@@ -149,7 +148,9 @@ export class GameComponent implements OnInit {
       console.log(error);
     },
   );
+  }
 
-
+  onBook(index,id){
+    
   }
 }

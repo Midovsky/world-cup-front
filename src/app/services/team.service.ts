@@ -35,7 +35,7 @@ export class TeamService {
    updateTeam(team:Team, id) {
      const token= this.authService.getToken();
      const headers = new Headers({'Content-Type': 'application/json', 'Authorization': 'Bearer '+token});
-     return this.http.put('http://localhost:8000/api/teams/'+id,
+     return this.http.put('http://localhost:8080/api/teams/'+id,
      team,
      {headers: headers})
        .map(
