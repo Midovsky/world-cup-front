@@ -20,6 +20,7 @@ import { AuthGuard } from './auth-guard.service';
 import { TeamComponent } from './team/team.component';
 import { TeamService } from './services/team.service';
 import { ReserveService } from './services/reserve.service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ReserveService } from './services/reserve.service';
     GameComponent,
     HomeComponent,
     TeamComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
