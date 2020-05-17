@@ -20,6 +20,9 @@ import { AuthGuard } from './auth-guard.service';
 import { TeamComponent } from './team/team.component';
 import { TeamService } from './services/team.service';
 import { ReserveService } from './services/reserve.service';
+import { CreateTeamComponent } from './create-team/create-team.component';
+import { TeamsListComponent } from './teams-list/teams-list.component';
+import { EditTeamComponent } from './edit-team/edit-team.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { ReserveService } from './services/reserve.service';
     GameComponent,
     HomeComponent,
     TeamComponent,
+    CreateTeamComponent,
+    TeamsListComponent,
+    EditTeamComponent,
   ],
   imports: [
     BrowserModule,

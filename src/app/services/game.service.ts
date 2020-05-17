@@ -16,7 +16,7 @@ export class GameService {
    storeGame(game:Game) {
      const token= this.authService.getToken();
      const headers = new Headers({'Content-Type': 'application/json', 'Authorization': 'Bearer '+token});
-       return this.http.post('http://localhost:8080/api/games',
+       return this.http.post('https://world-cup-back-end.herokuapp.com/api/games/',
        game,
        {headers: headers})
        .map(
@@ -35,7 +35,7 @@ export class GameService {
    updateGame(game:Game, id) {
      const token= this.authService.getToken();
      const headers = new Headers({'Content-Type': 'application/json', 'Authorization': 'Bearer '+token});
-     return this.http.put('http://localhost:8080/api/games/'+id,
+     return this.http.put('https://world-cup-back-end.herokuapp.com/api/games/'+id,
      game,
      {headers: headers})
        .map(
@@ -54,7 +54,7 @@ export class GameService {
    deleteGame(id) {
      const token= this.authService.getToken();
      const headers = new Headers({'Content-Type': 'application/json', 'Authorization': 'Bearer '+token});
-       return this.http.delete('http://localhost:8080/api/games/'+id, {headers: headers})
+       return this.http.delete('https://world-cup-back-end.herokuapp.com/api/games/'+id, {headers: headers})
 
   
    }
@@ -63,7 +63,7 @@ export class GameService {
    const token= this.authService.getToken();
    console.log(token);
    const headers = new Headers({'Access-Control-Allow-Origin':'*','Authorization': 'Bearer '+token});
-   return this.http.get('http://localhost:8080/api/games', {headers: headers})
+   return this.http.get('https://world-cup-back-end.herokuapp.com/api/games/', {headers: headers})
      .map(
        (response: Response) => {
          const data = response.json();

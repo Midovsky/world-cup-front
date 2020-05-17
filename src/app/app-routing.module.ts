@@ -9,14 +9,15 @@ import { SigninComponent } from './signin/signin.component';
 import { GameComponent } from './game/game.component';
 import { HomeComponent } from './home/home.component';
 import { TeamComponent } from './team/team.component';
+import { CreateTeamComponent } from './create-team/create-team.component';
+import { TeamsListComponent } from './teams-list/teams-list.component';
+import { EditTeamComponent } from './edit-team/edit-team.component';
 
 
 
 
 const appRoutes: Routes = [
   { path: '', redirectTo:'/home', pathMatch: 'full',  },
-
-
 
   { path: 'home', component: HomeComponent},
 
@@ -26,9 +27,11 @@ const appRoutes: Routes = [
   ]},
 
   { path: 'teams', component: TeamComponent, children:[
-    {path: 'create', component: TeamComponent},
-    {path: ':id/edit', component: TeamComponent}
+    {path: '', component: TeamsListComponent},
+     {path: 'create', component: CreateTeamComponent},
+    {path: ':id/edit', component: EditTeamComponent}
   ]},
+
 
   { path: 'login', component: SigninComponent},
 
@@ -38,7 +41,7 @@ const appRoutes: Routes = [
 
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forRoot(appRoutes)],
+  imports: [CommonModule, RouterModule.forRoot(appRoutes),RouterModule.forChild(appRoutes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
