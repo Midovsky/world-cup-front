@@ -33,19 +33,11 @@ export class GameComponent implements OnInit {
   constructor(private gameService:GameService, private teamService:TeamService,private reserveService:ReserveService, private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.showFormUpdate = false;
-    this.showFormAdd= false;
-    this.showGames = true;
-    this.gameAdded=false;
-    this.gameDeleted = false;
-    this.gameUpdated = false;
-    this.onGet();
+
   }
 
   onGet(){
-    this.showGames = true;
-    this.showFormAdd = false;
-    this.showFormUpdate = false;
+
     this.gameService.getGames()
       .subscribe(
         (games: any[]) => {this.games = games,   
@@ -57,113 +49,6 @@ export class GameComponent implements OnInit {
   }
 
 
-  onDelete(ix,game) {
-
-    this.gameService.deleteGame(game.id)
-    .subscribe(
-      () => {
-          this.onGet();
-    },
-    (error) => {
-      console.log(error);
-    },
-  );
-  this.onGet();
-
-  }
-
-  onAdd(){
-
-    this.teamService.getTeams()
-    .subscribe(
-      (teams: any[]) => {this.teams = teams
-      },
-      (error) => console.log(error)
-    );
-    this.showGames = false;
-    this.showFormAdd = true;
-    this.showFormUpdate = false;
-    this.router.navigate(['create'],{relativeTo: this.route});
-  }
-  
-
-  onSubmit(form: NgForm) {
-
-    const value = form.value;
-
-    const newGame = new Game(value.date,value.homeTeam,value.awayTeam,value.score,value.price,value.stadium);
-      this.gameService.storeGame(newGame)
-      .subscribe(
-        (response) => {
-        this.success = response['success'];
-        this.router.navigate(['/games']);
-        form.reset();
-        this.onGet();
-        console.log(this.success);
-        console.log(response);
-      },
-      (error) => {
-        console.log(error);
-      },
-    );
 
 
-  }
-  onEdit(index,id) {
-    this.index=index;
-    this.id=id;
-    this.showFormUpdate = true;
-    this.showGames = false;
-        this.game.date=this.games[index].date;
-        this.game.stadium=this.games[index].stadium;
-        this.game.price=this.games[index].price;
-        this.game.score=this.games[index].score;
-        this.router.navigate([id,'edit'],{relativeTo: this.route});
-  }
-
-  onUpdateSubmit(form: NgForm) {
-    this.gameAdded = false;
-
-    const value = form.value;
-
-  
-
-    const newGame = new Game("",null,null,value.score,value.price,value.stadium);
-
-    this.gameService.updateGame(newGame,this.id)
-    .subscribe(
-      (response) => {
-      this.success = response['success'];
-      this.router.navigate(['/games']);
-      this.onGet();
-      this.showGames = true;
-      this.showFormUpdate = false;
-      this.gameDeleted = false;
-      this.gameUpdated = true;
-      form.reset();
-
-
-    },
-    (error) => {
-      console.log(error);
-    },
-  );
-  }
-
-  onBook(id){
-
-    this.reserveService.reserveGame(id)
-    .subscribe(
-      (response) => {
-
-      this.router.navigate(['/games']);
-      this.onGet();
-      console.log(response);
-    },
-    (error) => {
-      console.log(error);
-    },
-  );
-    
-  }
 }

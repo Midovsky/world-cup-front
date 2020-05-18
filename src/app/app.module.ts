@@ -23,6 +23,9 @@ import { ReserveService } from './services/reserve.service';
 import { CreateTeamComponent } from './create-team/create-team.component';
 import { TeamsListComponent } from './teams-list/teams-list.component';
 import { EditTeamComponent } from './edit-team/edit-team.component';
+import { CreateGameComponent } from './create-game/create-game.component';
+import { GamesListComponent } from './games-list/games-list.component';
+import { EditGameComponent } from './edit-game/edit-game.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { EditTeamComponent } from './edit-team/edit-team.component';
     CreateTeamComponent,
     TeamsListComponent,
     EditTeamComponent,
+    CreateGameComponent,
+    GamesListComponent,
+    EditGameComponent,
   ],
   imports: [
     BrowserModule,

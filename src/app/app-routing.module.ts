@@ -12,6 +12,9 @@ import { TeamComponent } from './team/team.component';
 import { CreateTeamComponent } from './create-team/create-team.component';
 import { TeamsListComponent } from './teams-list/teams-list.component';
 import { EditTeamComponent } from './edit-team/edit-team.component';
+import { CreateGameComponent } from './create-game/create-game.component';
+import { GamesListComponent } from './games-list/games-list.component';
+import { EditGameComponent } from './edit-game/edit-game.component';
 
 
 
@@ -22,8 +25,9 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent},
 
   { path: 'games', component: GameComponent, children:[
-    {path: 'create', component: GameComponent},
-    {path: ':id/edit', component: GameComponent}
+    {path: '', component: GamesListComponent},
+    {path: 'create', component: CreateGameComponent},
+    {path: ':id/edit', component: EditGameComponent}
   ]},
 
   { path: 'teams', component: TeamComponent, children:[

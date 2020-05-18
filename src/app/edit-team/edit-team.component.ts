@@ -40,7 +40,6 @@ export class EditTeamComponent implements OnInit, OnDestroy {
 
     const newTeam = new Team(value.name,value.wins,value.loses,value.draws);
     
-    
     this.teamService.updateTeam(newTeam,this.id)
     .subscribe(
       (response) => {

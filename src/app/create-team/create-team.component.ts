@@ -35,7 +35,6 @@ export class CreateTeamComponent implements OnInit {
   }
 
 
-  
   onSubmit(form: NgForm) {
 
     const value = form.value;

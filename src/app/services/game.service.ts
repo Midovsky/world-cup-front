@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import {Headers,Http, RequestOptions, Response, Request} from '@angular/http';
 import { map } from "rxjs/operators";
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import {Game} from '../models/game.model';
 import {AuthService} from '../auth.service';
 
 @Injectable()
 export class GameService {
+
+  public game = new BehaviorSubject<Game>(new Game(null,null,null,null,null,null));
+  public startedEditing = this.game.asObservable();
 
   constructor(private http:Http,private authService:AuthService) {
 
