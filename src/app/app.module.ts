@@ -26,6 +26,7 @@ import { EditTeamComponent } from './pages/team/edit-team/edit-team.component';
 import { CreateGameComponent } from './pages/game/create-game/create-game.component';
 import { GamesListComponent } from './pages/game/games-list/games-list.component';
 import { EditGameComponent } from './pages/game/edit-game/edit-game.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { EditGameComponent } from './pages/game/edit-game/edit-game.component';
     CreateGameComponent,
     GamesListComponent,
     EditGameComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
