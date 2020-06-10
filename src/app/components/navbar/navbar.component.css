@@ -1,5 +1,5 @@
 .navbar { 
-    background-color: #8a1538 !important;
+    background-image:linear-gradient(to bottom, #8a1538 30%, #1C0111 100%) !important;
    
 }
 .navbar-light .navbar-brand  , .nav-link{
