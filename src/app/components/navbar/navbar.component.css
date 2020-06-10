@@ -1,0 +1,7 @@
+.navbar { 
+    background-color: #8a1538 !important;
+   
+}
+.navbar-light .navbar-brand  , .nav-link{
+    color: white !important
+}
