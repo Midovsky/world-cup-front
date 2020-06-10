@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Game } from '../../models/game.model';
 import { Headers,Http, RequestOptions, Response, Request } from '@angular/http';
-import { AuthService } from '../../auth.service';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class ReserveService {
