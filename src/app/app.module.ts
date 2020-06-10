@@ -12,7 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './auth.service';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SigninComponent } from './signin/signin.component';
+import { SigninComponent } from './pages/signin/signin.component';
 import { GameService } from './services/game.service';
 import { GameComponent } from './pages/game/game.component';
 import { HomeComponent } from './pages/home/home.component';
