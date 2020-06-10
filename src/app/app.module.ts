@@ -15,7 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SigninComponent } from './signin/signin.component';
 import { GameService } from './services/game.service';
 import { GameComponent } from './pages/game/game.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { AuthGuard } from './auth-guard.service';
 import { TeamComponent } from './pages/team/team.component';
 import { TeamService } from './services/team.service';

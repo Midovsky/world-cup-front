@@ -7,7 +7,7 @@ import { AuthGuard } from './auth-guard.service';
 
 import { SigninComponent } from './signin/signin.component';
 import { GameComponent } from './pages/game/game.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { TeamComponent } from './pages/team/team.component';
 import { CreateTeamComponent } from './pages/team/create-team/create-team.component';
 import { TeamsListComponent } from './pages/team/teams-list/teams-list.component';
