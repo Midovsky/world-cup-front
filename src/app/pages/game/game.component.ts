@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../../models/game.model';
 import { NgForm } from '@angular/forms';
-import { GameService } from '../../services/game.service';
+import { GameService } from '../../utils/services/game.service';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import { Team } from '../../models/team.model';
-import { TeamService } from '../../services/team.service';
-import { ReserveService } from '../../services/reserve.service';
+import { TeamService } from '../../utils/services/team.service';
+import { ReserveService } from '../../utils/services/reserve.service';
 
 
 @Component({

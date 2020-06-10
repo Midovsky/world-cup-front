@@ -4,8 +4,8 @@ import { map } from "rxjs/operators";
 import { BehaviorSubject } from 'rxjs';
 import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import {Team} from '../models/team.model';
-import {AuthService} from '../auth.service';
+import {Team} from '../../models/team.model';
+import {AuthService} from '../../auth.service';
 
 @Injectable()
 export class TeamService {

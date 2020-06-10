@@ -13,13 +13,13 @@ import { AuthService } from './auth.service';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SigninComponent } from './pages/signin/signin.component';
-import { GameService } from './services/game.service';
+import { GameService } from './utils/services/game.service';
 import { GameComponent } from './pages/game/game.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AuthGuard } from './auth-guard.service';
 import { TeamComponent } from './pages/team/team.component';
-import { TeamService } from './services/team.service';
-import { ReserveService } from './services/reserve.service';
+import { TeamService } from './utils/services/team.service';
+import { ReserveService } from './utils/services/reserve.service';
 import { CreateTeamComponent } from './pages/team/create-team/create-team.component';
 import { TeamsListComponent } from './pages/team/teams-list/teams-list.component';
 import { EditTeamComponent } from './pages/team/edit-team/edit-team.component';
