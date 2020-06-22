@@ -5,3 +5,7 @@
 .navbar-light .navbar-brand  , .nav-link{
     color: white !important
 }
+
+a { 
+    cursor: pointer;
+}
