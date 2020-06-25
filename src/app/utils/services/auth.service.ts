@@ -40,7 +40,7 @@ export class AuthService {
     const headers = new Headers({'Content-Type': 'application/json'});
       const email:string = value.username;
       const password:string = value.password;
-      return this.http.post('https://world-cup-back-end.herokuapp.com/auth/login/', {email, password},{headers: headers})
+      return this.http.post('http://localhost:8080/auth/login/', {email, password},{headers: headers})
       .map(
 
         (response) => {

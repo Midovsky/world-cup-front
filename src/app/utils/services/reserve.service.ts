@@ -15,7 +15,7 @@ export class ReserveService {
     const headers = new Headers({'Access-Control-Allow-Origin':'*','Content-Type': 'application/json', 'Authorization': 'Bearer '+token});
     console.log(headers);
     
-    return this.http.post('https://world-cup-back-end.herokuapp.com/reserve/'+idGame,
+    return this.http.post('http://localhost:8080/reserve/'+idGame,
     {headers: headers})
     .map(
      (response: Response) => {

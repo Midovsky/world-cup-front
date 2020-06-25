@@ -27,6 +27,7 @@ import { CreateGameComponent } from './pages/game/create-game/create-game.compon
 import { GamesListComponent } from './pages/game/games-list/games-list.component';
 import { EditGameComponent } from './pages/game/edit-game/edit-game.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { UserComponent } from './pages/user/user.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     GamesListComponent,
     EditGameComponent,
     NavbarComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
