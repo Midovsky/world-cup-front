@@ -43,7 +43,7 @@ export class UserComponent implements OnInit {
 
   register() {
     
-    if(this.firstName == "" || this.lastName == "" ||  this.email == "" || this.password == ""||this.rule==""){
+    if(this.firstName == "" || this.lastName == "" ||  this.email == "" || this.password == ""){
       this.message = "all fields are required"; 
       return 1;
     }
