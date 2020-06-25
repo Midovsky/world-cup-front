@@ -8,7 +8,7 @@ import { User } from 'src/app/models/user.model';
 })
 export class UserService {
    
-  baseurl: string;
+  baseurl: string = "localhost:8080";
   httpOptions = {
     headers: new HttpHeaders({
       "Content-Type": "application/json",
@@ -20,7 +20,7 @@ export class UserService {
 
   AddUser(obj): Observable<any[]> {
     return this.http.post<any>(
-      this.baseurl + "/auth/register",
+      this.baseurl + "/auth/newUser",
       obj,
       this.httpOptions
     );
