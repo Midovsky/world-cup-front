@@ -91,10 +91,6 @@ export class UserComponent implements OnInit {
     
    });
 
-   console.log('delete ' + id);
   }
 
-  change($events){
-    console.log(this.rule);
-  }
 }
