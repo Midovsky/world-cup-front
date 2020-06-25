@@ -10,15 +10,17 @@ import {UserService} from "../../utils/services/user.service";
 export class UserComponent implements OnInit {
 
   
-  rule : string = "" ; 
+  
   firstName = "" ;
   lastName = ""; 
   email ="";
   password= "";
-
+  amount: number = 0 ;
   message = ""; 
 
   disabled = false ;
+
+
 
   isAdd = false;
   display = true; 
@@ -33,8 +35,7 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (localStorage.getItem('ROLE')==='ROLE_CONSULTANT')
-    this.router.navigate(['/home'])
+    
 
     this.userService.getAllUsers().subscribe( (res )=> {
       this.users = res;
@@ -43,7 +44,7 @@ export class UserComponent implements OnInit {
 
   register() {
     
-    if(this.firstName == "" || this.lastName == "" ||  this.email == "" || this.password == ""){
+    if(this.firstName == "" || this.lastName == "" ||  this.email == "" || this.password == "" || this.amount){
       this.message = "all fields are required"; 
       return 1;
     }
@@ -55,6 +56,7 @@ export class UserComponent implements OnInit {
     user.firstName = this.firstName;
     user.lastName = this.lastName; 
     user.password =  this.password;
+    user.amount = this.amount
     
     console.log(user); 
 
