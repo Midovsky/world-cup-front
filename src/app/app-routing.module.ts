@@ -15,6 +15,7 @@ import { EditTeamComponent } from './pages/team/edit-team/edit-team.component';
 import { CreateGameComponent } from './pages/game/create-game/create-game.component';
 import { GamesListComponent } from './pages/game/games-list/games-list.component';
 import { EditGameComponent } from './pages/game/edit-game/edit-game.component';
+import { UserComponent } from './pages/user/user.component';
 
 
 
@@ -34,7 +35,11 @@ const appRoutes: Routes = [
     {path: '', component: TeamsListComponent},
      {path: 'create', component: CreateTeamComponent},
     {path: ':id/edit', component: EditTeamComponent}
-  ]},
+  ]}, 
+
+  { 
+    path: 'user' , component: UserComponent
+  },
 
 
   { path: 'login', component: SigninComponent},
