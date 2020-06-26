@@ -1,25 +1,27 @@
-<button (click)="onAdd()" class="btn btn-info">Add Team</button>
+<h2>Teams management</h2>
+<button style="float: right;margin-bottom: 20px;"  (click)="onAdd()" class="btn btn-info">Add Team</button>
       <!-- <a class="nav-link" routerLink="/teams/create" routerLinkActive="active">Child Four</a> -->
 <table  class="table table-striped" id="table">
   <thead>
       <tr>
-      <th>ID</th>
+      <th></th>
       <th>Name</th>
       <th>Wins</th>
       <th>Draws</th>
       <th>Loses </th>
+      <th>Actions</th>
       </tr>
 </thead>
 <tbody>
   <tr *ngFor="let team of teams; let i = index" >
-    <td>{{team.id}}</td>
+    <td><img src="{{team.flag}}" style="height: 25px;width:25px;"></td>
     <td>{{team.name}}</td>
     <td>{{team.wins}}</td>
     <td>{{team.draws}}</td>
     <td>{{team.loses}}</td>
 
-    <td> <button class="btn" (click)="onEdit(i,team.id)"  > Edit </button></td>
-    <td> <button class="btn btn-danger" (click)="onDelete(i,team)">  Delete </button></td>
+    <td> <button class="btn btn-primary" (click)="onEdit(i,team.id)"  style="margin-right: 10px;"> Edit </button>
+     <button class="btn btn-danger" (click)="onDelete(i,team)">  Delete </button></td>
   </tr>
 </tbody>
 </table>
