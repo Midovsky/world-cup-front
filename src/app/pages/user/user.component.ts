@@ -38,6 +38,7 @@ export class UserComponent implements OnInit {
     
 
     this.userService.getAllUsers().subscribe( (res )=> {
+      console.log(res)
       this.users = res;
     });
   }
@@ -56,7 +57,8 @@ export class UserComponent implements OnInit {
     user.firstName = this.firstName;
     user.lastName = this.lastName; 
     user.password =  this.password;
-    user.amount = this.amount
+    user.amount = this.amount;
+    user.role = "ROLE_USER";
     
     console.log(user); 
 

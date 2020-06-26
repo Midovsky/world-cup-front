@@ -8,10 +8,12 @@ import { User } from 'src/app/models/user.model';
 })
 export class UserService {
    
-  baseurl: string = "localhost:8080";
+  baseurl: string = "http://localhost:8080";
+  token:string = localStorage.getItem('token');
   httpOptions = {
     headers: new HttpHeaders({
       "Content-Type": "application/json",
+      'Authorization': 'Bearer '+this.token
     }),
   };
 

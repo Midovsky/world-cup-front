@@ -1,15 +1,22 @@
-<div class="container">
+<div class="col-md-12">
+    <h2>Users management</h2>
+    <button style="float:right" *ngIf="display" class="btn btn-info" (click) = "addClick()" >Add new User</button>  
+    <button style="float:right" *ngIf="isAdd" class="btn btn-info" (click) = "addClick()" >Return to list</button>  
+    
+</div>
+
+<div class="container" >
     <br>
-   <button *ngIf="display" class="btn btn-info pull-right" (click) = "addClick()" >Add new User</button>  
-   <button *ngIf="isAdd" class="btn btn-info pull-right" (click) = "addClick()" >Return to list</button>  
    
    
-   <table *ngIf="display" class="table">
+   <table *ngIf="display" class="table" style="margin-top:50px;">
      <thead>
        <tr>
          
          <th scope="col">First name</th>
          <th scope="col">Last name</th>
+         <th scope="col">Amount</th>
+         
          <th scope="col">Email</th>
          <th scope="col">Actions</th>
        </tr>
@@ -18,9 +25,9 @@
        <tr *ngFor="let user of users">
          <td>{{user.firstName}}</td>
          <td>{{user.lastName}}</td>
+         <td>{{user.amount}}</td>
          <td>{{user.email}}</td>
-         <td>{{user.role}}</td>
-         <td><button class="btn btn-danger" (click)="delete(user.id);  $event.stopPropagation()">Delete</button></td>
+         <td><button class="btn btn-danger pull-right" (click)="delete(user.id);  $event.stopPropagation()">Delete</button></td>
        </tr>
      
      </tbody>
@@ -37,7 +44,7 @@
        
        <div class="panel panel-default">
          <div class="panel-heading">
-           <h3 class="panel-title">Users Management <small></small></h3>
+           <h3 class="panel-title">Add new user<small></small></h3>
           <div class="alert alert success">{{ message }}</div> 
          </div>
          <div class="panel-body">
