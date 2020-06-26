@@ -16,7 +16,7 @@ export class CreateTeamComponent implements OnInit {
   teams:Team[]=[];
 
   games:Game[]=[];
-  team:Team = new Team("",null,null,null);
+  team:Team = new Team("",null,null,null, null );
   index:Number;
   id:Number;
   showFormUpdate:Boolean;
@@ -39,7 +39,7 @@ export class CreateTeamComponent implements OnInit {
 
     const value = form.value;
 
-    const newTeam = new Team(value.name,value.wins,value.loses,value.draws);
+    const newTeam = new Team(value.name,value.wins,value.loses,value.draws, value.flag);
       this.teamService.storeTeam(newTeam)
       .subscribe(
         (response) => {

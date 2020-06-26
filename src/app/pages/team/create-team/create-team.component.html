@@ -49,7 +49,17 @@
         [(ngModel)]="team.loses"
             >
       </div>
-  
+      <div class="form-group">
+        <label for="score">flag</label>
+        <input
+          type="text"
+          id="flag"
+          class="form-control input-sm"
+          name="flag"
+          [(ngModel)]="team.flag"
+              >
+        </div>
+      
   
       <input type="hidden" name="index" [(ngModel)]="index">
       <input type="hidden" name="id" [(ngModel)]="id">

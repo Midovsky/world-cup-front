@@ -11,7 +11,7 @@ import {AuthService} from './auth.service';
 export class TeamService {
 
 
-  public team = new BehaviorSubject<Team>(new Team(null,null,null,null));
+  public team = new BehaviorSubject<Team>(new Team(null,null,null,null,null));
   public startedEditing = this.team.asObservable();
 
 
