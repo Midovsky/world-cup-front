@@ -76,19 +76,19 @@ export class GamesListComponent implements OnInit {
   }
 
   onBook(id){
-
+     if(confirm('are you sure to book this game')){
     this.reserveService.reserveGame(id)
     .subscribe(
       (response) => {
 
-      this.router.navigate(['/games']);
+      this.router.navigate(['/books']);
       this.onGet();
       console.log(response);
     },
     (error) => {
       console.log(error);
     },
-  );
+  );}
     
   }
 

@@ -28,6 +28,7 @@ import { GamesListComponent } from './pages/game/games-list/games-list.component
 import { EditGameComponent } from './pages/game/edit-game/edit-game.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserComponent } from './pages/user/user.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { UserComponent } from './pages/user/user.component';
     EditGameComponent,
     NavbarComponent,
     UserComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
