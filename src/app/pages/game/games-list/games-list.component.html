@@ -1,8 +1,9 @@
-<button (click)="onAdd()" class="btn btn-info">Add Game</button>
+<h2>games list</h2>
+<button style="margin-bottom: 10px;float: right;" (click)="onAdd()" class="btn btn-info">Add Game</button>
 <table  class="table table-striped" id="table">
   <thead>
       <tr>
-      <th>ID</th>
+      <th>Game</th>
       <th>date</th>
       <th>stadium</th>
       <th>score </th>
@@ -12,7 +13,7 @@
 </thead>
 <tbody>
   <tr *ngFor="let game of games; let i = index" >
-    <td>{{game.id}}</td>
+    <td><img src="{{game.homeTeam.flag}}" style="height: 25px;width: 25px;"> {{game.homeTeam.name}}  <strong>-</strong>  {{game.awayTeam.name}} <img style="height: 25px;width: 25px;" src="{{game.awayTeam.flag}}"></td>
     <td>{{game.date}}</td>
     <td>{{game.stadium}}</td>
     <td>{{game.score}}</td>
