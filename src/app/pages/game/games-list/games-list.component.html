@@ -7,6 +7,7 @@
       <th>stadium</th>
       <th>score </th>
       <th> price </th>
+      <th>Actions</th>
       </tr>
 </thead>
 <tbody>
@@ -17,9 +18,11 @@
     <td>{{game.score}}</td>
     <td>{{game.price}}</td>
 
-    <td> <button class="btn" (click)="onEdit(i,game.id)"  > Edit </button></td>
-    <td> <button class="btn btn-danger" (click)="onDelete(i,game)">  Delete </button></td>
-    <td> <button class="btn " (click)="onBook(game.id)">  Book </button></td>
+    <td>
+      <button class="btn btn-success" style="margin-right: 10px;" (click)="onBook(game.id)">  Book </button>
+      <button class="btn btn-primary"  style="margin-right: 10px;" (click)="onEdit(i,game.id)"> Edit </button>
+      <button class="btn btn-danger" style="margin-right: 10px;" (click)="onDelete(i,game)">  Delete </button>
+    </td>
   </tr>
 </tbody>
 </table>
